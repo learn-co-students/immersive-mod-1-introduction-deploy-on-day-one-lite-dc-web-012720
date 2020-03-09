@@ -226,7 +226,7 @@ git commit -m "updated index page and added zoe perez page"
 
   * **NOTE: Do not push to master. Do not type anything that contains the word master!**
   * You're going to push to a branch that is the same name as your local branch.
-    * For instance, if we're on the branch zoe-perez, we're going to push to zoe-perez.
+    * For instance, if we're on the branch `zoe-perez`, we're going to push to `zoe-perez`.
 
 * To confirm this push worked you can do two things:
   * Type `git branch -a` which will show the remote branch on github.com you
@@ -243,7 +243,7 @@ dropdown, select the name of the branch you've been working on.
 
 ## Next Steps
 
-### Additional Group Logistics
+### Additional Group Instructions
 
 Since your table is going to be deploying a single web page with all of your
 tables profiles, you'll need to merge every branch that your table created
@@ -251,11 +251,14 @@ into a single branch. This branch will contain every profile from your table.
 The process of merging these branches may result in merge conflicts in
 `index.html` and possibly elsewhere. That's totally okay and expected!
 
-Think about the best way to merge all the branches together. Should one person
-do it? Should everyone do it in order? Should you merge into a pre-existing
-branch, like `master`, or create a totally new branch? You might be wondering
-what the best answer is but there isn't a "best answer", just decide on a
-strategy and go for it!
+In order to merge the `zoe-perez` branch into `master`, we must first checkout master `git checkout master`. You should see a message that says `Switched to branch 'master'`. In addition, you can run the command `git branch` and you should be an asterisk by the master.
+
+```sh
+* master
+  zoe-perez
+```
+
+Next, merge the code from `zoe-perez` into the master branch with `git merge zoe-perez`. Once you're ready, push the newly merged master branch up to Github. Run `git status` to see your changes, then `git add .` to stage those changes for a commit, `git commit -m "your message here"` to commit your changes, then finally `git push` to push those changes up to Github.
 
 ### Merge Conflicts
 
@@ -271,7 +274,7 @@ When [merging][], a [merge conflict][] can happen. Generally they look like:
 ```
 
 This just means that you will have to open the files where there are merge
-conflicts, in this case, `index.html`, and find the part that looks like:
+conflicts, and find the part that looks like:
 
 ```text
 <<<<<<< HEAD
